@@ -9,3 +9,5 @@ This repository contains a prototype dashboard aimed at providing insights into 
 - **Data Cleaning:** Conducts basic data cleaning operations to ensure data integrity.
 - **Visualization:** Presents data visualizations such as histograms to illustrate transaction values, order cycle times, review scores, and job satisfaction distributions.
 - **Statistical Analysis:** Calculates median values for metrics such as transaction values, order cycle times, review scores, and job satisfaction.
+
+medium link: https://medium.com/@albarpambagio/enhancing-executive-effectiveness-makmur-jayas-performance-management-system-3066a89c40ca
