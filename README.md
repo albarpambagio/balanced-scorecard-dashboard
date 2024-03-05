@@ -11,8 +11,8 @@ This repository contains a prototype dashboard aimed at providing insights into 
 - **Statistical Analysis:** Calculates median values for metrics such as transaction values, order cycle times, review scores, and job satisfaction.
 
 ### Datasets
-https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
-https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset
+- https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
+- https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset
 
 ### Easy Report
 https://medium.com/@albarpambagio/enhancing-executive-effectiveness-makmur-jayas-performance-management-system-3066a89c40ca
