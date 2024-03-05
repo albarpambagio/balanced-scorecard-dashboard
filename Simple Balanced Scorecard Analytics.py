@@ -6,11 +6,17 @@ app = marimo.App()
 
 @app.cell
 def __(mo):
+    mo.md(f"# General Overview of Makmur Jaya Performance")
+    return
+
+
+@app.cell
+def __(avgOrder, avgReview, avgSatisfaction, mo, octMedian):
     mo.hstack([
-        mo.stat(value="$ 84.495", label="Average Order Value", caption="the average amount customers spend per transaction", bordered=True),
-        mo.stat(value="9.0", label="Order Cycle Time (in days)", caption="the total duration taken for an order to be processed, fulfilled, and delivered to the customer.", bordered=True),
-        mo.stat(value="5.0", label="Average Review Score (1 to 5)", caption="median value of ratings assigned to products, services, or experiences by customers or users.", bordered=True),
-        mo.stat(value="3.0", label="Job Satisfaction Score (1 to 5)", caption="measures the level of contentment and fulfillment employees feel in their roles and workplace environment.", bordered=True)
+        mo.stat(value=f"$ {avgOrder}", label="Average Order Value", caption="the average amount customers spend per transaction", bordered=True),
+        mo.stat(value=f"{octMedian}", label="Order Cycle Time (in days)", caption="the total duration taken for an order to be processed, fulfilled, and delivered to the customer.", bordered=True),
+        mo.stat(value=f"{avgReview}", label="Average Review Score (out of 5)", caption="median value of ratings assigned to products, services, or experiences by customers or users.", bordered=True),
+        mo.stat(value=f"{avgSatisfaction}", label="Job Satisfaction Score (out of 5)", caption="measures the level of contentment and fulfillment employees feel in their roles and workplace environment.", bordered=True)
     ])
     return
 
@@ -40,7 +46,6 @@ def __(pd):
 
     # Unpack the dataframes
     df_order_items, df_order_reviews, df_orders, df_people = dataframes
-
     return (
         dataframes,
         df_order_items,
@@ -81,10 +86,10 @@ def __(df_order_items2, px):
 
 
 @app.cell
-def __():
+def __(trxProduct):
     # Calculating the median of the resulting values
-    # median_value = trxProduct.median()
-    return
+    avgOrder = trxProduct.median()
+    return avgOrder,
 
 
 @app.cell
@@ -127,10 +132,10 @@ def __(orderCycleTime, px):
 
 
 @app.cell
-def __():
+def __(orderCycleTime):
     # Calculating the median of the resulting values
-    # octMedian = orderCycleTime.dt.days.median()
-    return
+    octMedian = orderCycleTime.dt.days.median()
+    return octMedian,
 
 
 @app.cell
@@ -177,10 +182,10 @@ def __(df_order_reviews, px):
 
 
 @app.cell
-def __():
+def __(df_order_reviews):
     # Calculating the median of the resulting values
-    # df_order_reviews['review_score'].median()
-    return
+    avgReview = df_order_reviews['review_score'].median()
+    return avgReview,
 
 
 @app.cell
@@ -214,9 +219,9 @@ def __(df_people, px):
 
 
 @app.cell
-def __():
-    # df_people['JobSatisfaction'].median()
-    return
+def __(df_people):
+    avgSatisfaction = df_people['JobSatisfaction'].median()
+    return avgSatisfaction,
 
 
 @app.cell
